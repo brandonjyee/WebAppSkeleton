@@ -1,0 +1,29 @@
+{
+  "name": "WebAppSkeleton",
+  "version": "1.0.0",
+  "description": "Skeleton for a web app",
+  "main": "index.js",
+  "scripts": {
+    "build-client": "webpack -w --mode production",
+    "start": "NODE_ENV='development' npm run build-client & NODE_ENV='development' npm run start-server",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "jest": "^23.6.0",
+    "prop-types": "^15.6.2",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "compression": "^1.7.3",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "react": "^16.7.0-alpha.0",
+    "react-dom": "^16.7.0-alpha.0"
+  }
+}
