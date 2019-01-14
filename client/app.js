@@ -1,13 +1,16 @@
-import React from 'react'
-import Example from './components/Example'
+import React from 'react';
+import ErrorBoundary from './ErrorBoundary';
+import Example from './components/Example';
 
 const App = () => {
   return (
     <div>
-      <p>My App</p>
-      <Example />
+      <ErrorBoundary>
+        <p>My App</p>
+        <Example />
+      </ErrorBoundary>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
