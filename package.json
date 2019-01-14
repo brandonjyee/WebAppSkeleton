@@ -1,10 +1,10 @@
 {
-  "name": "WebAppSkeleton",
+  "name": "webappskeleton",
   "version": "1.0.0",
   "description": "Skeleton for a web app",
   "main": "index.js",
   "scripts": {
-    "build-client": "webpack -w --mode production",
+    "build-client": "webpack -w --mode development",
     "start": "NODE_ENV='development' npm run build-client & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "test": "jest"
@@ -23,7 +23,7 @@
     "compression": "^1.7.3",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
-    "react": "^16.7.0-alpha.0",
-    "react-dom": "^16.7.0-alpha.0"
+    "react": "^16.8.0-alpha.0",
+    "react-dom": "^16.8.0-alpha.0"
   }
 }
