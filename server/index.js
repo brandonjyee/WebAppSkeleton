@@ -6,16 +6,21 @@ const compression = require('compression')
 const app = express()
 const PORT = process.env.PORT || 8080
 
-function startServer() {
+
+function setupMiddleware() {
   // Logging
   app.use(morgan('dev'))
+
   // Body parsing
   app.use(express.json())
   app.use(express.urlencoded({extended: true}))
+
   // Compression
   app.use(compression())
+
   // Server static files
   app.use(express.static(path.join(__dirname, '..', 'public')))
+
   // Send an error for file requests when the file is not available
   app.use((req, res, next) => {
     if (path.extname(req.path).length) {
@@ -38,6 +43,10 @@ function startServer() {
     console.error(err.stack)
     res.status(err.status || 500).send(err.message || 'Internal server error.')
   })
+}
+
+function startServer() {
+  setupMiddleware()
 
   const server = app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`)

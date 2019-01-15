@@ -1,13 +1,15 @@
 import React from 'react';
+
 import ErrorBoundary from './ErrorBoundary';
-import Example from './components/Example';
+import Routes from './routes'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <div>
       <ErrorBoundary>
-        <p>My App</p>
-        <Example />
+        <Navbar />
+        <Routes />
       </ErrorBoundary>
     </div>
   );
