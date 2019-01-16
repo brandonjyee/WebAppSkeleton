@@ -1,9 +1,12 @@
 /*
-
 // ==== Postgres & Sequelize ====
-npm i pg sequelize
-// Optional? Might be required
-npm i pg-hstore     // Allows serial/deserial of JSON objs
+
+==== Regular Dependencies (use 'npm i'): ====
+pg
+sequelize
+
+Optional:
+pg-hstore     // Allows serial/deserial of JSON objs
 
 // Make sure the postgres db service is running (especially if running locally) and running on the right port (default 5432)
 // For Ubuntu 16.04
