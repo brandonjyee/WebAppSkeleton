@@ -18,6 +18,9 @@ function setupMiddleware() {
   // Compression
   app.use(compression())
 
+  // API route
+  app.use('/api', require('./api'))
+
   // Server static files
   app.use(express.static(path.join(__dirname, '..', 'public')))
 

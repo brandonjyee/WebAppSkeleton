@@ -2,7 +2,7 @@ import React from 'react';
 
 import ErrorBoundary from './ErrorBoundary';
 import Routes from './routes'
-import Navbar from './components/Navbar'
+import {Navbar} from './components'
 
 const App = () => {
   return (
