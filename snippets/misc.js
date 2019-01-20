@@ -17,35 +17,6 @@ const shuffle = function(arr) {
 };
 
 
-
-// ==== Read input synchronously from commandline =====
-// npm i readline-sync
-const readlineSync = require('readline-sync');
-
-// Wait for user's response.
-const userName = readlineSync.question('May I have your name? ');
-console.log('Hi ' + userName + '!');
-
-// Handle the secret text (e.g. password).
-const favFood = readlineSync.question('What is your favorite food? ', {
-  hideEchoBack: true // The typed text on screen is hidden by `*` (default).
-});
-console.log('Oh, ' + userName + ' loves ' + favFood + '!');
-
-// ==== Read input asynchronously from command line ====
-// npm i readline
-const readline = require('readline')
-
-const rl = rl.createInterface({
-  input: process.stdin,
-  output: process.stdout
-})
-
-rl.question('Enter your name', (ans) => {
-  console.log(ans)
-})
-
-
 // ==== Convert a hash into a human-readable string of words ====
 // npm i hashwords
 const hw = require('hashwords')()
