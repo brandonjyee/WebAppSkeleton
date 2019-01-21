@@ -1,5 +1,8 @@
 https://devcenter.heroku.com/articles/heroku-cli
 
+### Commands Cheatsheet
+https://devhints.io/heroku
+
 ### Configuring the project
 
 1. There must be a `package.json` file in the root directory. Heroku will automatically run `npm start` (in the absence of a Procfile), so you must make sure that that script doesn't run any system-level packages like using `nodemon`.
@@ -43,9 +46,27 @@ Sign up for a free heroku account if you haven't already
   Run `heroku ps:scale web=1` to verify that at least one instance of the app is running.
   Go to the provided URL in your browser. Ex: `https://guarded-harbor-65788.herokuapp.com/`
   Or you can do `heroku open` which will open the url of the app
-  4.  `heroku addons:create heroku-postgresql:hobby-dev` to add ("provision") a postgres database to your heroku dyno
+
+  **Adding Postgres**
+  1.  `heroku addons:create heroku-postgresql:hobby-dev` to add ("provision") a postgres database to your heroku dyno. `hobby-dev` refers to the plan name -- we're gonna use the free one.
+  2. Your Node app must attempt to get the DB url from an environment variable called `DATABASE_URL` (`process.env.DATABASE_URL`). This is b/c when you provision a Postgres DB to your deployed app, Heroku will set that config var on the environment.
+  3. Load data into the Heroku DB.
+
+  `heroku pg:reset DATABASE`
+
+  The way to set up the Heroku DB is to push your local DB (with any seed data needed) to Heroku. To find the DB url: `heroku pg:info`
+  `heroku pg:push mylocaldb HEROKU_POSTGRESQL_URL --app sushi`
+
+  Log into psql on your Heroku DB and check that the DB has been successfully copied over
+  `heroku pg:psql HEROKU_POSTGRESQL_URL`
+
+  You probably need to restart the app server after you've provisioned the DB and loaded it with data so that your app can reload the connection to the DB
+  `heroku ps:restart`
+  or `heroku ps:restart web`
+  or `heroku dyno:restart`    // Restarts the entire dyno, not just the Node process
 
   For more info about using Postgres on heroku see: https://devcenter.heroku.com/articles/heroku-postgresql
+  https://devcenter.heroku.com/articles/heroku-postgresql#connecting-in-node-js
 
   https://devcenter.heroku.com/articles/getting-started-with-nodejs
 
