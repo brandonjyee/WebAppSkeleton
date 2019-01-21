@@ -4,9 +4,9 @@ https://devcenter.heroku.com/articles/heroku-cli
 
 1. There must be a `package.json` file in the root directory. Heroku will automatically run `npm start` (in the absence of a Procfile), so you must make sure that that script doesn't run any system-level packages like using `nodemon`.
 ** To troubleshoot package dependencies, on local command line, type `rm -rf node_modules; npm i --production`. Then try running the app locally by typing `heroku local web`. If a dependency is missing from your `package.json` then you'll see an error that says which module cannot be found.
-** In `package.json`, specify the version of node: `"engines": { "node": "10.x" }`
-** In `package.json`, add a script for heroku to build the project and generate the `bundle.js` file: `"scripts": { "heroku-postbuild": "webpack -p" }`
-2.
+2. In `package.json`, specify the version of node: `"engines": { "node": "10.x" }`
+3. In `package.json`, add a script for heroku to build the project and generate the `bundle.js` file: `"scripts": { "heroku-postbuild": "webpack -p" }`
+
 
 ### Set up Heroku CLI
 
@@ -29,6 +29,7 @@ Sign up for a free heroku account if you haven't already
   1. cd to the project directory
   2.  `heroku create` or `heroku create your-app-name` if you have a name in mind.
   Verify a heroku target was created: `git remote -v`
+  ** If you want to change your app name, run `heroku apps:rename newname`
   3. `git push heroku master` . If successful, app is now deployed
   Run `heroku ps:scale web=1` to verify that at least one instance of the app is running.
   Go to the provided URL in your browser. Ex: `https://guarded-harbor-65788.herokuapp.com/`
