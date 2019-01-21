@@ -1,3 +1,16 @@
+// ==== Print out an object ====
+const myObj = { a: 'hello', b: 'world', c: 'yay'}
+JSON.stringify(myObj, null, ' ')
+
+// ==== Print out an object in React component ====
+function myComponent() {
+  return (
+    <pre>
+      {JSON.stringify(myObj, null, ' ')}
+    </pre>
+  )
+}
+
 
 /**
  * Shuffles array in place. Fisher-Yates algo.

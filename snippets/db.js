@@ -24,8 +24,9 @@ sudo systemctl status postgresql.service
 
 
 // Create a new database for the project
-createdb <db-name>
+createdb <db-name>  // By default, it should be same as the project's name in the package.json
 
+// On ubuntu, can use pgAdmin4 to view the DB
 */
 
 

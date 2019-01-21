@@ -30,4 +30,4 @@ You can verify with: `git remote -v`
 ## Test that it's working
 
 1. `npm i` to install all the npm packages
-2. Run `npm start` and go to `localhost:8080` in your browser to see that the default page loads
+2. Run `npm run start-dev` and go to `localhost:8080` in your browser to see that the default page loads

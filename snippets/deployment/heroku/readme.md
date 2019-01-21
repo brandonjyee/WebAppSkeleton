@@ -6,7 +6,16 @@ https://devcenter.heroku.com/articles/heroku-cli
 ** To troubleshoot package dependencies, on local command line, type `rm -rf node_modules; npm i --production`. Then try running the app locally by typing `heroku local web`. If a dependency is missing from your `package.json` then you'll see an error that says which module cannot be found.
 2. In `package.json`, specify the version of node: `"engines": { "node": "10.x" }`
 3. In `package.json`, add a script for heroku to build the project and generate the `bundle.js` file: `"scripts": { "heroku-postbuild": "webpack -p" }`
+4. If you have any config vars (like in secrets.js), you'll have to set them on heroku in a different way (b/c you don't want to check in the secrets.js file)
+https://devcenter.heroku.com/articles/config-vars
+Set a config var:
+`heroku config:set GITHUB_USERNAME=joesmith S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190`
+Get a config var:
+`heroku config:get GITHUB_USERNAME`
+Remove a config var:
+`heroku config:unset GITHUB_USERNAME`
 
+For Node, you can access these variables via `process.env.VARNAME`
 
 ### Set up Heroku CLI
 
