@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build-client": "webpack -w --mode development",
-    "start": "NODE_ENV='development' npm run build-client & NODE_ENV='development' npm run start-server",
+    "start": "node server",
+    "start-dev": "NODE_ENV='development' npm run build-client & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "test": "jest"
   },
