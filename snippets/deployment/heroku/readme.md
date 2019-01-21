@@ -1,5 +1,12 @@
 https://devcenter.heroku.com/articles/heroku-cli
 
+### Configuring the project
+
+1. There must be a `package.json` file in the root directory. Heroku will automatically run `npm start` (in the absence of a Procfile), so you must make sure that that script doesn't run any system-level packages like using `nodemon`.
+** To troubleshoot package dependencies, on local command line, type `rm -rf node_modules; npm i --production`. Then try running the app locally by typing `heroku local web`. If a dependency is missing from your `package.json` then you'll see an error that says which module cannot be found.
+** In `package.json`, specify the version of node: `"engines": { "node": "10.x" }`
+** In `package.json`, add a script for heroku to build the project and generate the `bundle.js` file: `"scripts": { "heroku-postbuild": "webpack -p" }`
+2.
 
 ### Set up Heroku CLI
 
@@ -14,6 +21,7 @@ These versions will auto-update. But can also do a third way that doesn't auto u
 
 1.  Set up the [Heroku command line tools](https://devcenter.heroku.com/articles/heroku-cli)
 2.  `heroku login` . Login info will be stored in `~.netrc` file.
+Sign up for a free heroku account if you haven't already
 3.  Add a git remote for heroku:
 
 * **If you're creating a new app...**

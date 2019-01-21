@@ -2,13 +2,18 @@
   "name": "webappskeleton",
   "version": "1.0.0",
   "description": "Skeleton for a web app",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
   "main": "index.js",
   "scripts": {
     "build-client": "webpack -w --mode development",
     "start": "node server",
     "start-dev": "NODE_ENV='development' npm run build-client & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
-    "test": "jest"
+    "test": "jest",
+
+    "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
     "axios": "^0.18.0",
