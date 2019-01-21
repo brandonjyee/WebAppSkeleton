@@ -19,10 +19,15 @@ Snippets for adding:
 ## Starting a project
 
 1. Create a new empty github repo for your project
-2. Clone that repo locally
-3. Clone WebAppSkeleton and copy its contents over to your new repo
-4. Set WebAppSkeleton as a remote upstream source (to be able to pull updates from it):
+2. Clone that repo locally and `cd` into it
+3. Set WebAppSkeleton as a remote upstream source (to be able to pull updates from it):
 `git remote add upstream git@github.com:brandonjyee/WebAppSkeleton.git`
 or `git remote add upstream https://github.com/brandonjyee/WebAppSkeleton.git`
-5. `git pull upstream master` to pull any updates to WebAppSkeleton
-6. `git push origin master` to push up to your new repo
+You can verify with: `git remote -v`
+4. `git pull upstream master` to pull the source from WebAppSkeleton
+5. `git push origin master` to push up to your new repo
+
+## Test that it's working
+
+1. `npm i` to install all the npm packages
+2. Run `npm start` and go to `localhost:8080` in your browser to see that the default page loads
