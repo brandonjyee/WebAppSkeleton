@@ -39,6 +39,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
     "jest": "^23.6.0",
+    "nodemon": "^1.18.9",
     "prop-types": "^15.6.2",
     "redux-devtools-extension": "^2.13.7",
     "webpack": "^4.28.3",

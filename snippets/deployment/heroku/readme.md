@@ -18,9 +18,14 @@ These versions will auto-update. But can also do a third way that doesn't auto u
 
 * **If you're creating a new app...**
 
-  0. cd to the project directory
-  1.  `heroku create` or `heroku create your-app-name` if you have a name in mind.
-  2.  `heroku addons:create heroku-postgresql:hobby-dev` to add ("provision") a postgres database to your heroku dyno
+  1. cd to the project directory
+  2.  `heroku create` or `heroku create your-app-name` if you have a name in mind.
+  Verify a heroku target was created: `git remote -v`
+  3. `git push heroku master` . If successful, app is now deployed
+  Run `heroku ps:scale web=1` to verify that at least one instance of the app is running.
+  Go to the provided URL in your browser. Ex: `https://guarded-harbor-65788.herokuapp.com/`
+  Or you can do `heroku open` which will open the url of the app
+  4.  `heroku addons:create heroku-postgresql:hobby-dev` to add ("provision") a postgres database to your heroku dyno
 
   For more info about using Postgres on heroku see: https://devcenter.heroku.com/articles/heroku-postgresql
 

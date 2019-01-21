@@ -1,7 +1,7 @@
 # WebAppSkeleton
 Skeleton for creating a Single Page App (client & server). This project is meant to be a lean and highly customizable starting point for rapid prototyping.
 
-Includes:
+*Includes:*
 * React with hooks
 * Redux
 * Express
@@ -9,12 +9,12 @@ Includes:
 * Webpack
 * Jest
 
-Snippets for adding:
+*Snippets for integrating:*
 * Postgres
 * Sequelize
 * Web sockets (client & server)
 * User Authentication (client & server)
-* Misc utilities
+* Misc utilities and libraries
 
 ## Starting a project
 
