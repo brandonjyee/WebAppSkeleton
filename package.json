@@ -12,7 +12,6 @@
     "start-dev": "NODE_ENV='development' npm run build-client & NODE_ENV='development' npm run start-server",
     "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
     "test": "jest",
-
     "heroku-postbuild": "webpack -p"
   },
   "dependencies": {
@@ -44,7 +43,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "jest": "^23.6.0",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.9",
     "prop-types": "^15.6.2",
     "redux-devtools-extension": "^2.13.7",

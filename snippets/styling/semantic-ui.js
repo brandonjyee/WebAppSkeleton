@@ -28,6 +28,7 @@ export default function MyComponent() {
 
 
 // ==== Search bar ====
+import React, {useState} from 'react'
 import {Input, Button, Segment} from 'semantic-ui-react'
 
 /**
@@ -49,6 +50,11 @@ const styles = {
 }
 
 export default function MyComponent() {
+  const [inputTxt, setInputTxt] = useState('')
+  const handleChange = (evt) => {
+    setInputTxt(evt.target.value)
+  }
+  const handleSubmit = () => {}
   return (
     <Segment padded floated="right">
       <span style={styles.font}>Enter some stuff:</span>
@@ -57,7 +63,7 @@ export default function MyComponent() {
         name="name"
         placeholder="Search names..."
         onChange={handleChange}
-        value={name}
+        value={inputTxt}
         style={styles.nameInput}
       />
       <Button style={styles.button} onClick={handleSubmit}>Search</Button>
